@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            font-family: cursive;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, rgba(177, 59, 79, 0.849), rgba(128, 0, 128, 0.801));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .clock {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(250, 255, 252, 0.719);
+            border-radius: 50%;
+            border: 2px solid rgb(0, 0, 0);
+            position: relative;
+        }
+
+        .clock .number {
+            --rotation: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            transform: rotate(var(--rotation));
+            font-size: 1.5rem;
+        }
+
+        .clock .number1 {
+            --rotation: 30deg
+        }
+
+        .clock .number2 {
+            --rotation: 60deg
+        }
+
+        .clock .number3 {
+            --rotation: 90deg
+        }
+
+        .clock .number4 {
+            --rotation: 120deg
+        }
+
+        .clock .number5 {
+            --rotation: 150deg
+        }
+
+        .clock .number6 {
+            --rotation: 180deg
+        }
+
+        .clock .number7 {
+            --rotation: 210deg
+        }
+
+        .clock .number8 {
+            --rotation: 240deg
+        }
+
+        .clock .number9 {
+            --rotation: 270deg
+        }
+
+        .clock .number10 {
+            --rotation: 300deg
+        }
+
+        .clock .number11 {
+            --rotation: 330deg
+        }
+
+        .clock .number12 {
+            --rotation: 360deg
+        }
+
+        .clock .hand {
+            --rotation: 0;
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            border: 1px solid white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            transform-origin: bottom;
+            transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+            background-color: black;
+            z-index: 10;
+        }
+
+        .clock::after {
+            content: '';
+            position: absolute;
+            background-color: black;
+            z-index: 11;
+            width: 15px;
+            height: 15px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+
+        .clock .hand.second {
+            height: 45%;
+            width: 3px;
+            background-color: red;
+        }
+
+        .clock .hand.minute {
+            height: 40%;
+            width: 7px;
+            background: black;
+
+        }
+
+        .clock .hand.hour {
+            width: 10px;
+            height: 35%;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+        <div class="number number1">01</div>
+        <div class="number number2">02</div>
+        <div class="number number3">03</div>
+        <div class="number number4">04</div>
+        <div class="number number5">05</div>
+        <div class="number number6">06</div>
+        <div class="number number7">07</div>
+        <div class="number number8">08</div>
+        <div class="number number9">09</div>
+        <div class="number number10">10</div>
+        <div class="number number11">11</div>
+        <div class="number number12">12</div>
+    </div>
+    <script src="clock.js"></script>
+</body>
+
+</html>
